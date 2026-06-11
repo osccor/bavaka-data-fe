@@ -84,7 +84,7 @@
 
 /* CTA card */
 .ctaCard {
-  background: linear-gradient(160deg, #1a0d4a 0%, #2d1570 60%, #4a1fa8 100%);
+  background: #2d1570 url('/cta-banner.png') center / cover no-repeat;
   border-radius: var(--radius-xl);
   padding: 24px 32px 32px;
   display: flex;

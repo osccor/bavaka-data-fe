@@ -20,8 +20,8 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--spacing-sm);
-  flex-wrap: nowrap;
 }
 
 .label {
@@ -29,7 +29,6 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   letter-spacing: -0.5px;
-  white-space: nowrap;
 }
 
 .trendUp,
@@ -83,7 +82,7 @@
 .divider {
   height: 1px;
   background: var(--color-border);
-  margin: var(--spacing-md) 0 var(--spacing-sm);
+  margin: var(--spacing-lg) 0 var(--spacing-sm);
 }
 
 .footer {

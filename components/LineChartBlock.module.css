@@ -16,47 +16,49 @@
 }
 
 .title {
-  font-size: var(--font-size-md);
+  font-size: 18px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   letter-spacing: -0.5px;
+  line-height: 30px;
   margin-bottom: 2px;
 }
 
 .subtitle {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-text-secondary);
   letter-spacing: -0.3px;
+  line-height: 20px;
 }
 
-/* Toggle */
+/* Toggle — two separate pill buttons */
 .toggle {
   display: flex;
-  gap: 0;
-  border: 1.5px solid var(--color-text);
-  border-radius: var(--radius-full);
-  overflow: hidden;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .toggleActive,
 .toggleInactive {
-  padding: 8px 20px;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  border: none;
+  padding: 15px 24px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 18px;
 }
 
 .toggleActive {
   background: var(--color-text);
   color: white;
+  border: 2px solid var(--color-text);
 }
 
 .toggleInactive {
   background: transparent;
   color: var(--color-text);
+  border: 2px solid var(--color-text);
 }
 
 .toggleInactive:hover {

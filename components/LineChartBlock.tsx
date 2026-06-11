@@ -17,9 +17,9 @@ import styles from './LineChartBlock.module.css'
 type View = 'manad' | 'ar'
 
 const COLORS = {
-  deltagare: '#6929ff',
+  deltagare: '#8046ff',
   visningar: '#00c853',
-  perVisning: '#f59300',
+  perVisning: '#fb923c',
 }
 
 function formatLeft(v: number) {
@@ -62,10 +62,10 @@ export default function LineChartBlock() {
 
       <ResponsiveContainer width="100%" height={380}>
         <ComposedChart data={data} margin={{ top: 10, right: 60, left: 10, bottom: 10 }}>
-          <CartesianGrid strokeDasharray="4 4" stroke="#e5e7eb" vertical={true} horizontal={false} />
+          <CartesianGrid strokeDasharray="4 4" stroke="#e2e2e2" vertical={true} horizontal={false} />
           <XAxis
             dataKey="label"
-            tick={{ fontSize: 12, fill: '#6b7280' }}
+            tick={{ fontSize: 12, fill: '#161616', fontWeight: 700 }}
             axisLine={false}
             tickLine={false}
           />
@@ -73,7 +73,7 @@ export default function LineChartBlock() {
             yAxisId="left"
             orientation="left"
             tickFormatter={formatLeft}
-            tick={{ fontSize: 12, fill: '#6929ff' }}
+            tick={{ fontSize: 12, fill: '#8046ff', fontWeight: 700 }}
             axisLine={false}
             tickLine={false}
             label={{
@@ -81,14 +81,14 @@ export default function LineChartBlock() {
               angle: -90,
               position: 'insideLeft',
               offset: 10,
-              style: { fontSize: 11, fill: '#6929ff' },
+              style: { fontSize: 12, fill: '#8046ff', fontWeight: 700 },
             }}
           />
           <YAxis
             yAxisId="right"
             orientation="right"
             tickFormatter={formatRight}
-            tick={{ fontSize: 12, fill: '#f59300' }}
+            tick={{ fontSize: 12, fill: '#fb923c', fontWeight: 700 }}
             axisLine={false}
             tickLine={false}
             label={{
@@ -96,14 +96,14 @@ export default function LineChartBlock() {
               angle: 90,
               position: 'insideRight',
               offset: 10,
-              style: { fontSize: 11, fill: '#f59300' },
+              style: { fontSize: 12, fill: '#fb923c', fontWeight: 700 },
             }}
           />
           <Tooltip
             contentStyle={{
               borderRadius: 8,
-              border: '1px solid #e5e7eb',
-              fontSize: 13,
+              border: '1px solid #e2e2e2',
+              fontSize: 14,
             }}
             formatter={(value, name) => {
               const n = Number(value)
@@ -115,8 +115,8 @@ export default function LineChartBlock() {
           />
           <Legend
             iconType="circle"
-            iconSize={10}
-            wrapperStyle={{ fontSize: 13, paddingTop: 16 }}
+            iconSize={14}
+            wrapperStyle={{ fontSize: 16, fontWeight: 700, color: '#161616', paddingTop: 16, letterSpacing: '-0.5px' }}
             formatter={(value) => {
               if (value === 'deltagare') return 'Deltagare'
               if (value === 'visningar') return 'Visningar'
