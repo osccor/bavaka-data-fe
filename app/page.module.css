@@ -1,0 +1,22 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (max-width: 390px) {
+  .content {
+    padding: 0 var(--spacing-md);
+  }
+}
