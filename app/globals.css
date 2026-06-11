@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colors — matched to Figma tokens */
   --color-primary: #8046ff;
@@ -16,7 +40,7 @@
   --color-text-muted: #757575;
 
   /* Typography */
-  --font-sans: var(--font-dm-sans), 'DM Sans', sans-serif;
+  --font-sans: 'DM Sans', sans-serif;
   --font-size-xs: 10px;
   --font-size-sm: 12px;
   --font-size-base: 14px;
