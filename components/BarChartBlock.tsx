@@ -7,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts'
 import { barChartData } from '@/lib/dummyData'
@@ -19,13 +18,19 @@ const COLORS = {
   perVisning100: '#f59300',
 }
 
+const LEGEND_ITEMS = [
+  { key: 'deltagare',     color: COLORS.deltagare,     label: 'Deltagare' },
+  { key: 'visningar',     color: COLORS.visningar,     label: 'Visningar' },
+  { key: 'perVisning100', color: COLORS.perVisning100, label: 'Deltagare per visning (x100)' },
+]
+
 function formatY(v: number) {
   if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M`
   if (v >= 1_000) return `${(v / 1_000).toFixed(0)}k`
   return String(v)
 }
 
-const BAR_WIDTH = 52 // px per group — drives scroll container width
+const BAR_WIDTH = 52
 const CHART_MIN_WIDTH = barChartData.length * BAR_WIDTH + 120
 
 export default function BarChartBlock() {
@@ -43,7 +48,7 @@ export default function BarChartBlock() {
           <ResponsiveContainer width="100%" height={420}>
             <ComposedChart
               data={barChartData}
-              margin={{ top: 10, right: 60, left: 10, bottom: 80 }}
+              margin={{ top: 10, right: 60, left: 10, bottom: 100 }}
               barCategoryGap="30%"
               barGap={2}
             >
@@ -108,17 +113,6 @@ export default function BarChartBlock() {
                   return [String(value), String(name)]
                 }}
               />
-              <Legend
-                iconType="circle"
-                iconSize={10}
-                wrapperStyle={{ fontSize: 13, paddingTop: 8 }}
-                formatter={(value) => {
-                  if (value === 'deltagare') return 'Deltagare'
-                  if (value === 'visningar') return 'Visningar'
-                  if (value === 'perVisning100') return 'Deltagare per visning (x100)'
-                  return value
-                }}
-              />
               <Bar
                 yAxisId="left"
                 dataKey="deltagare"
@@ -140,6 +134,19 @@ export default function BarChartBlock() {
             </ComposedChart>
           </ResponsiveContainer>
         </div>
+      </div>
+
+      {/* Legend rendered outside the SVG — never overlaps X-axis labels */}
+      <div className={styles.legend}>
+        {LEGEND_ITEMS.map((item) => (
+          <span key={item.key} className={styles.legendItem}>
+            <span
+              className={styles.legendDot}
+              style={{ background: item.color }}
+            />
+            {item.label}
+          </span>
+        ))}
       </div>
     </div>
   )

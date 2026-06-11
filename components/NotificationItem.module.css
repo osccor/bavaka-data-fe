@@ -1,12 +1,12 @@
 .item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--spacing-md);
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-md);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
 }
 
 .left {
@@ -14,6 +14,7 @@
   align-items: flex-start;
   gap: var(--spacing-sm);
   min-width: 0;
+  flex: 1;
 }
 
 .newBadge {
@@ -21,40 +22,43 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 7px;
+  padding: 2px 8px;
   background: var(--color-green-bg);
-  color: var(--color-green);
+  color: var(--color-green-badge-text);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-sm);
-  letter-spacing: 0.02em;
   margin-top: 2px;
 }
 
 .textBlock {
   min-width: 0;
+  flex: 1;
 }
 
 .criteria {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text);
-  line-height: 1.4;
+  line-height: 20px;
+  letter-spacing: -0.5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .location {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary);
-  margin-top: 2px;
+  letter-spacing: -0.5px;
+  margin-top: 1px;
 }
 
 .right {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   flex-shrink: 0;
 }
 
@@ -65,8 +69,8 @@
 }
 
 .agencyLogo {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   background: var(--color-primary-dark);
   display: flex;
@@ -85,26 +89,35 @@
 .agencyInfo {
   display: flex;
   flex-direction: column;
+  gap: 1px;
 }
 
 .agencyLabel {
   font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
   color: var(--color-text-secondary);
+  line-height: 16px;
+  letter-spacing: -0.3px;
 }
 
 .agencyName {
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text);
+  line-height: 16px;
+  letter-spacing: -0.3px;
 }
 
 .time {
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
   color: var(--color-text-muted);
+  line-height: 18px;
+  letter-spacing: -0.3px;
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 390px) {
   .item {
     flex-direction: column;
     align-items: flex-start;

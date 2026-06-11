@@ -4,19 +4,20 @@
 }
 
 .content {
-  max-width: var(--max-width);
+  /* max-width is content width (1200px) + padding on both sides */
+  max-width: calc(var(--max-width) + 2 * var(--page-padding));
   margin: 0 auto;
   padding: 0 var(--page-padding);
 }
 
 @media (max-width: 768px) {
   .content {
-    padding: 0 var(--spacing-lg);
+    padding: 0 32px;
   }
 }
 
 @media (max-width: 390px) {
   .content {
-    padding: 0 var(--spacing-md);
+    padding: 0 24px;
   }
 }

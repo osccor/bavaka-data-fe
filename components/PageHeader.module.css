@@ -36,8 +36,7 @@
 
 .breadcrumbCurrent {
   font-size: var(--font-size-sm);
-  color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
 }
 
 .title {
