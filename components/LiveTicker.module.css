@@ -99,7 +99,7 @@
 
 /* CTA card */
 .ctaCard {
-  background: linear-gradient(140deg, #8046ff 0%, #5a28e0 55%, #2d1570 100%);
+  background: #2d1570 url('/cta-banner.png') center / cover no-repeat;
   border-radius: var(--radius-xl);
   padding: 24px 32px 32px;
   display: flex;
@@ -126,16 +126,16 @@
 
 .ctaButton {
   display: inline-block;
-  padding: 8px 24px;
-  background: white;
-  color: var(--color-primary);
+  padding: 10px 28px;
+  background: #7b4fff;
+  color: white;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-full);
   border: none;
   cursor: pointer;
   text-align: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   transition: opacity 0.15s;
   align-self: flex-start;
 }
