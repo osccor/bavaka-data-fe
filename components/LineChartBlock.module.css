@@ -26,7 +26,7 @@
 
 .subtitle {
   font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
+  color: var(--color-text);
   letter-spacing: -0.3px;
   line-height: 20px;
 }
@@ -63,4 +63,63 @@
 
 .toggleInactive:hover {
   background: var(--color-border);
+}
+
+.scrollWrapper {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.scrollWrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scrollWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollWrapper::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+/* Custom legend matching BarChartBlock style */
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--spacing-sm);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.legendDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .toggle {
+    align-self: flex-start;
+  }
 }

@@ -17,7 +17,7 @@ export default function PageHeader({ title, description, breadcrumb }: PageHeade
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
         {breadcrumb.map((item, i) => (
           <span key={item.href} className={styles.breadcrumbItem}>
-            {i > 0 && <span className={styles.separator}>/</span>}
+            {i > 0 && <span className={styles.separator}>›</span>}
             {i < breadcrumb.length - 1 ? (
               <a href={item.href} className={styles.breadcrumbLink}>
                 {item.label}

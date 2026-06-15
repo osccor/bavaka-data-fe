@@ -25,7 +25,12 @@ export default function KPICard({
         <div className={styles.header}>
           <span className={styles.label}>{label}</span>
           <span className={trendPositive ? styles.trendUp : styles.trendDown}>
-            {trendPositive ? '↗' : '↘'} {trendPercent}%{' '}
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" style={{ flexShrink: 0 }}>
+              {trendPositive
+                ? <path d="M5 1L9.33 8.5H0.67L5 1Z" />
+                : <path d="M5 9L9.33 1.5H0.67L5 9Z" />}
+            </svg>
+            {' '}{trendPercent}%{' '}
             {trendPositive ? 'fler' : 'färre'} vs. förra månaden
           </span>
         </div>

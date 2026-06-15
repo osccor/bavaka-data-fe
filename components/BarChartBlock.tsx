@@ -60,7 +60,7 @@ export default function BarChartBlock() {
               <XAxis
                 dataKey="lan"
                 tick={{ fontSize: 11, fill: '#6b7280' }}
-                axisLine={false}
+                axisLine={{ stroke: '#e5e7eb' }}
                 tickLine={false}
                 angle={-45}
                 textAnchor="end"
@@ -97,6 +97,7 @@ export default function BarChartBlock() {
                 }}
               />
               <Tooltip
+                cursor={{ fill: 'rgba(128, 70, 255, 0.07)' }}
                 contentStyle={{
                   borderRadius: 8,
                   border: '1px solid #e5e7eb',

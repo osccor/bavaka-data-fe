@@ -9,6 +9,17 @@
   }
 }
 
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 384px;
@@ -23,6 +34,7 @@
   border-radius: var(--radius-xl);
   padding: var(--spacing-lg);
   overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
 
 .tickerHeader {
@@ -33,16 +45,18 @@
 }
 
 .tickerTitle {
-  font-size: var(--font-size-md);
+  font-family: var(--font-sans);
+  font-size: 18px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   letter-spacing: -0.5px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .tickerSubtitle {
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
+  color: var(--color-text);
   letter-spacing: -0.3px;
 }
 
@@ -66,6 +80,7 @@
   border-radius: 50%;
   background: white;
   flex-shrink: 0;
+  animation: livePulse 1.4s ease-in-out infinite;
 }
 
 .notificationList {
@@ -84,7 +99,7 @@
 
 /* CTA card */
 .ctaCard {
-  background: #2d1570 url('/cta-banner.png') center / cover no-repeat;
+  background: linear-gradient(140deg, #8046ff 0%, #5a28e0 55%, #2d1570 100%);
   border-radius: var(--radius-xl);
   padding: 24px 32px 32px;
   display: flex;
@@ -96,7 +111,7 @@
 .ctaTitle {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: white;
+  color: #fff;
   line-height: 32px;
   letter-spacing: -1px;
 }
@@ -104,7 +119,7 @@
 .ctaText {
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
   line-height: 24px;
   letter-spacing: -0.3px;
 }
@@ -112,8 +127,8 @@
 .ctaButton {
   display: inline-block;
   padding: 8px 24px;
-  background: var(--color-primary);
-  color: white;
+  background: white;
+  color: var(--color-primary);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-full);

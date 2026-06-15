@@ -23,12 +23,19 @@
   align-items: center;
   justify-content: center;
   padding: 2px 8px;
-  background: var(--color-green-bg);
-  color: var(--color-green-badge-text);
+  background: var(--color-primary);
+  color: white;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-sm);
   margin-top: 2px;
+  animation: badgePop 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 .textBlock {
